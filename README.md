@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+Design a Form Component which would have the following inputs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    - Full Name
+    - Email
+    - Date of Birth
+    - Region (Dropdown: Africa, Americas, Asia, Europe, Oceania)
+    - Check Box (I agree to Terms and Conditions)
+    - Submit Button
 
-## Available Scripts
+Once the form is submitted,
 
-In the project directory, you can run:
+The countries with their details belonging to the selected region should be fetched using the API
 
-### `yarn start`
+    https://restcountries.eu/rest/v2/region/{region}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+and should be populated in a table in the same page using another Component.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Validations:
 
-### `yarn test`
+    - Full Name should be validated against valid names ('John', 'John Doe' are valid names) and is mandatory
+    - Email should be a valid email and is mandatory
+    - Age should be a minimum of 18 (mandatory field)
+    - Region is mandatory
+    - Checkbox needs to be checked
+    - Form should be submitted only if there is no Error.
+    - Existing errors should be cleared before resubmission of the Form.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Conditions:
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    - DO NOT USE JQUERY
+    - Errors should be shown as inline text, instead of a popup
+    - Loader is expected when the form is submitted to fetch the results.

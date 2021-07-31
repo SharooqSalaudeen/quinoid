@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  height: 100vh;
 }
 
 .form {
@@ -8,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 .form-control {
@@ -24,6 +24,12 @@ thead {
 tbody {
   color: blue;
 }
+table {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: fit-content;
+}
 table,
 th,
 td {
@@ -32,4 +38,18 @@ td {
 td,
 th {
   padding: 5px;
+}
+
+.error {
+  border-color: rgba(255, 0, 0, 0.6);
+}
+
+.error#terms {
+  outline: 2px solid #c00;
+}
+
+.error-message p {
+  margin: 1px;
+  color: #c00;
+  font-size: 14px;
 }

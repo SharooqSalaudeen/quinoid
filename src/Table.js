@@ -23,7 +23,6 @@ export default function Table(props) {
   }, [region, url]);
 
   useEffect(() => {
-    setLoading(true);
     fetchData();
     return () => {
       setLoading(false);
@@ -52,75 +51,78 @@ export default function Table(props) {
             <th>Timexones</th>
             <th>Top Level Domains</th>
           </tr>
-          {data.map((item, id) => {
-            const {
-              name,
-              area,
-              borders,
-              capital,
-              currencies,
-              languages,
-              flag,
-              timezones,
-              topLevelDomain,
-            } = item;
+          {data &&
+            data.map((item, id) => {
+              const {
+                name,
+                area,
+                borders,
+                capital,
+                currencies,
+                languages,
+                flag,
+                timezones,
+                topLevelDomain,
+              } = item;
 
-            return (
-              <tr key={id}>
-                <td>
-                  <h5>{name}</h5>
-                </td>
-                <td>
-                  <h5>{area}</h5>
-                </td>
-                <td>
-                  <h5>
-                    {borders.map((item, id) => {
-                      return <p key={id}>{`${item}, `}</p>;
-                    })}
-                  </h5>
-                </td>
-                <td>
-                  <h5>{capital}</h5>
-                </td>
-                <td>
-                  <h5>
-                    {currencies.map((item, id) => {
-                      return <p key={id}>{`${item.name}, `}</p>;
-                    })}
-                  </h5>
-                </td>
-                <td>
-                  <h5>
-                    {languages.map((item, id) => {
-                      return <p key={id}>{`${item.name}, `}</p>;
-                    })}
-                  </h5>
-                </td>
-                <td>
-                  <img
-                    style={{ height: "60px", width: "120px" }}
-                    src={`${flag}`}
-                    alt={`${name}`}
-                  />
-                </td>
-                <td>
-                  <h5>
-                    {timezones.map((item, id) => {
-                      return <p key={id}>{`${item}, `}</p>;
-                    })}
-                  </h5>
-                </td>
-                <td>
-                  <h5>
-                    {topLevelDomain.map((item, id) => {
-                      return <p key={id}>{`${item}, `}</p>;
-                    })}
-                  </h5>
-                </td>
-              </tr>
-            );
-          })}
+              return (
+                <>
+                  <tr key={id}>
+                    <td>
+                      <h5>{name}</h5>
+                    </td>
+                    <td>
+                      <h5>{area}</h5>
+                    </td>
+                    <td>
+                      <h5>
+                        {borders.map((item, id) => {
+                          return <p key={id}>{`${item}, `}</p>;
+                        })}
+                      </h5>
+                    </td>
+                    <td>
+                      <h5>{capital}</h5>
+                    </td>
+                    <td>
+                      <h5>
+                        {currencies.map((item, id) => {
+                          return <p key={id}>{`${item.name}, `}</p>;
+                        })}
+                      </h5>
+                    </td>
+                    <td>
+                      <h5>
+                        {languages.map((item, id) => {
+                          return <p key={id}>{`${item.name}, `}</p>;
+                        })}
+                      </h5>
+                    </td>
+                    <td>
+                      <img
+                        style={{ height: "60px", width: "120px" }}
+                        src={`${flag}`}
+                        alt={`${name}`}
+                      />
+                    </td>
+                    <td>
+                      <h5>
+                        {timezones.map((item, id) => {
+                          return <p key={id}>{`${item}, `}</p>;
+                        })}
+                      </h5>
+                    </td>
+                    <td>
+                      <h5>
+                        {topLevelDomain.map((item, id) => {
+                          return <p key={id}>{`${item}, `}</p>;
+                        })}
+                      </h5>
+                    </td>
+                  </tr>
+                </>
+              );
+            })}
         </tbody>
       </table>
     </div>
